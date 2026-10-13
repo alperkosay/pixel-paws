@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <title>Miyav!</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <canvas id="logo"></canvas>
+      <div>
+        <h1>Miyav!</h1>
+        <p class="sub">tarayıcı kedilerin</p>
+      </div>
+    </div>
+    <label class="switch" title="Kedileri aç/kapat">
+      <input type="checkbox" id="enabled">
+      <span></span>
+    </label>
+  </header>
+
+  <section class="actions">
+    <button id="feed" class="btn food" title="Mama kabını doldur">🐟 Mama</button>
+    <button id="waterBtn" class="btn water" title="Su kabını doldur">💧 Su</button>
+    <button id="summon" class="btn" title="Kediler 10 sn seni takip etsin">📣 Çağır</button>
+    <button id="ambush" class="btn" title="Bir kedi fareye pusu kursun">⚡ Pusu</button>
+  </section>
+
+  <section>
+    <h2>Kedilerim <span id="count" class="muted"></span></h2>
+    <div id="list" class="list"></div>
+    <p id="empty" class="muted empty" hidden>Hiç kedin yok :( Aşağıdan bir tane sahiplen!</p>
+  </section>
+
+  <section class="adopt">
+    <h2>Kedi sahiplen</h2>
+    <div id="swatches" class="swatches"></div>
+    <div class="row">
+      <input id="newName" maxlength="16" placeholder="İsim" spellcheck="false">
+      <button id="dice" class="btn icon" title="Rastgele isim">🎲</button>
+      <button id="adopt" class="btn primary">Sahiplen 🐾</button>
+    </div>
+  </section>
+
+  <section class="settings">
+    <h2>Ayarlar</h2>
+    <label class="row between">
+      <span>Kedi boyutu</span>
+      <input type="range" id="scale" min="2" max="5" step="1">
+    </label>
+    <label class="row between">
+      <span>Kedi ağacı 🌳</span>
+      <input type="checkbox" id="tree">
+    </label>
+    <label class="row between">
+      <span id="siteLabel">Bu sitede gizle</span>
+      <input type="checkbox" id="siteOff">
+    </label>
+    <ul class="hint">
+      <li>Kedinin üstünde fareyi gezdir → sevilir 💕</li>
+      <li>Kediye <b>sağ tıkla</b> → takip et, oyuncak at, ağaca çık…</li>
+      <li>Sürükleyip havaya at, kediler dört ayak üstüne düşer</li>
+      <li>Sol alttaki çuval / sürahi → mama ve su, sepet → oyuncaklar</li>
+      <li>Oyuncakları sürükleyip fırlat, sağ tıkla kaldır</li>
+    </ul>
+  </section>
+
+  <script src="sprites.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
