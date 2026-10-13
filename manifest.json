@@ -1,13 +1,13 @@
 {
   "manifest_version": 3,
-  "name": "Miyav! — Tarayıcı Kedileri",
-  "short_name": "Miyav!",
+  "name": "Pixel Paws — Tarayıcı Kedileri",
+  "short_name": "Pixel Paws",
   "version": "1.0.0",
   "description": "Tarayıcında yaşayan pixel art kediler: fareni kovalar, pusu kurar, yalanır, uyur. Sev, besle, yenilerini sahiplen!",
   "permissions": ["storage", "activeTab"],
   "background": { "service_worker": "background.js" },
   "action": {
-    "default_title": "Miyav!",
+    "default_title": "Pixel Paws",
     "default_popup": "popup.html",
     "default_icon": {
       "16": "icons/icon16.png",

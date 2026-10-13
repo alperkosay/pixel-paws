@@ -1,4 +1,4 @@
-// Miyav! — pixel art sprite verileri ve renderer.
+// Pixel Paws — pixel art sprite verileri ve renderer.
 // Hem content script'te (globalThis.MiyavSprites) hem de Node'da (önizleme/ikon üretimi) çalışır.
 (function (root) {
   'use strict';

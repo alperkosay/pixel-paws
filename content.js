@@ -1,4 +1,4 @@
-// Miyav! — sayfadaki kediler.
+// Pixel Paws — sayfadaki kediler.
 (() => {
   'use strict';
   if (window.top !== window || window.__miyavKediler) return;
@@ -335,9 +335,9 @@
     }
   }
 
-  // Ekranda tırmık izi (cam çiziliyormuş gibi)
+  // Ekranda tırmık izi (cam çiziliyormuş gibi). (x, y) = izin bittiği pati ucu
   function clawMark(x, y) {
-    if (!L.fx) return;
+    if (!L.back) return;
     const MW = 12, MH = 22;
     const c = document.createElement('canvas');
     c.width = MW; c.height = MH;
@@ -357,9 +357,9 @@
     const sc = Math.max(2, S - 1);
     c.style.width = MW * sc + 'px';
     c.style.height = MH * sc + 'px';
-    c.style.transform = `translate(${Math.round(x - (MW / 2) * sc)}px,${Math.round(y)}px)`;
-    // İzler camın üstünde: kedinin önünde görünsün
-    L.fx.appendChild(c);
+    // Pati yukarıdan aşağı çekilmiş: iz patinin üstünde kalır, kedinin yüzünü kapatmaz
+    c.style.transform = `translate(${Math.round(x - (MW / 2) * sc)}px,${Math.round(y - MH * sc)}px)`;
+    L.back.appendChild(c);
     c.animate([{ clipPath: 'inset(0 0 100% 0)' }, { clipPath: 'inset(0 0 0 0)' }], { duration: 160, easing: 'ease-out' });
     c.animate([{ opacity: 1 }, { opacity: 1, offset: 0.7 }, { opacity: 0 }], { duration: 8000 }).onfinish = () => c.remove();
   }
@@ -1330,7 +1330,7 @@
           // Yukarıdaki pati aşağı çekilir -> iz bırakır
           const sx = f === 0 ? 1.5 : 18.5;
           const px = c.x - 12 * S + (2 + sx) * S + rand(-4, 4);
-          const py = c.y - 24 * S + rand(-3, 6);
+          const py = c.y - 23 * S + rand(-3, 3);
           clawMark(px, py);
           if (chance(0.3)) fxText(pick(['tırt', 'cırt', 'hırt']), px, py - 8, { dy: -16, size: 11, color: '#9b6b50', dur: 800 });
         }
